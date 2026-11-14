@@ -1,0 +1,236 @@
+import {
+  Athlete,
+  Coach,
+  Academy,
+  TrainingSession,
+  Batch,
+  AttendanceRecord,
+  KPI,
+  PerformanceTrendPoint,
+} from '../types';
+
+export const athletes: Athlete[] = [
+  {
+    id: 'ath-01',
+    name: 'Jordan Michaels',
+    age: 19,
+    sport: 'Basketball',
+    academyId: 'aca-01',
+    level: 'elite',
+    avatar: 'https://i.pravatar.cc/150?img=10',
+    readinessScore: 92,
+    lastActive: '2025-11-06T09:30:00Z',
+  },
+  {
+    id: 'ath-02',
+    name: 'Serena Alvarez',
+    age: 22,
+    sport: 'Tennis',
+    academyId: 'aca-02',
+    level: 'advanced',
+    avatar: 'https://i.pravatar.cc/150?img=32',
+    readinessScore: 88,
+    lastActive: '2025-11-07T06:45:00Z',
+  },
+  {
+    id: 'ath-03',
+    name: 'Kai Okafor',
+    age: 17,
+    sport: 'Track & Field',
+    academyId: 'aca-01',
+    level: 'intermediate',
+    avatar: 'https://i.pravatar.cc/150?img=18',
+    readinessScore: 81,
+    lastActive: '2025-11-05T17:20:00Z',
+  },
+  {
+    id: 'ath-04',
+    name: 'Maya Chen',
+    age: 21,
+    sport: 'Swimming',
+    academyId: 'aca-03',
+    level: 'advanced',
+    avatar: 'https://i.pravatar.cc/150?img=45',
+    readinessScore: 85,
+    lastActive: '2025-11-07T04:10:00Z',
+  },
+];
+
+export const coaches: Coach[] = [
+  {
+    id: 'co-01',
+    name: 'Alex Thompson',
+    specialization: 'Performance Conditioning',
+    avatar: 'https://i.pravatar.cc/150?img=5',
+    experience: 12,
+    activeAthletes: 18,
+    rating: 4.8,
+  },
+  {
+    id: 'co-02',
+    name: 'Priya Nair',
+    specialization: 'Speed & Agility',
+    avatar: 'https://i.pravatar.cc/150?img=12',
+    experience: 9,
+    activeAthletes: 14,
+    rating: 4.6,
+  },
+  {
+    id: 'co-03',
+    name: 'Mateo Garcia',
+    specialization: 'Endurance Training',
+    avatar: 'https://i.pravatar.cc/150?img=23',
+    experience: 7,
+    activeAthletes: 11,
+    rating: 4.4,
+  },
+];
+
+export const academies: Academy[] = [
+  {
+    id: 'aca-01',
+    name: 'Edge Performance Hub',
+    location: 'Austin, TX',
+    capacity: 120,
+    occupancy: 92,
+    headCoachId: 'co-01',
+  },
+  {
+    id: 'aca-02',
+    name: 'West Coast Elite Center',
+    location: 'San Diego, CA',
+    capacity: 85,
+    occupancy: 72,
+    headCoachId: 'co-02',
+  },
+  {
+    id: 'aca-03',
+    name: 'Northern Peak Academy',
+    location: 'Denver, CO',
+    capacity: 60,
+    occupancy: 44,
+    headCoachId: 'co-03',
+  },
+];
+
+export const sessions: TrainingSession[] = [
+  {
+    id: 'ses-01',
+    title: 'Explosive Power Circuit',
+    coachId: 'co-01',
+    academyId: 'aca-01',
+    date: '2025-11-08',
+    startTime: '08:00',
+    endTime: '09:30',
+    focus: 'Power',
+    intensity: 'high',
+    status: 'scheduled',
+    attendanceRate: 95,
+  },
+  {
+    id: 'ses-02',
+    title: 'Acceleration Ladder Drills',
+    coachId: 'co-02',
+    academyId: 'aca-02',
+    date: '2025-11-08',
+    startTime: '10:00',
+    endTime: '11:00',
+    focus: 'Speed',
+    intensity: 'medium',
+    status: 'scheduled',
+    attendanceRate: 88,
+  },
+  {
+    id: 'ses-03',
+    title: 'Endurance Pool Set',
+    coachId: 'co-03',
+    academyId: 'aca-03',
+    date: '2025-11-07',
+    startTime: '16:30',
+    endTime: '18:00',
+    focus: 'Endurance',
+    intensity: 'high',
+    status: 'completed',
+    attendanceRate: 91,
+  },
+];
+
+export const batches: Batch[] = [
+  {
+    id: 'bat-01',
+    name: 'Elite Off-Season',
+    academyId: 'aca-01',
+    sport: 'Basketball',
+    size: 24,
+    level: 'elite',
+    coachId: 'co-01',
+    schedule: 'Mon, Wed, Fri • 7:00 - 9:00 AM',
+  },
+  {
+    id: 'bat-02',
+    name: 'Velocity Track',
+    academyId: 'aca-02',
+    sport: 'Track & Field',
+    size: 18,
+    level: 'advanced',
+    coachId: 'co-02',
+    schedule: 'Tue, Thu • 6:30 - 8:00 AM',
+  },
+  {
+    id: 'bat-03',
+    name: 'Endurance Swim Squad',
+    academyId: 'aca-03',
+    sport: 'Swimming',
+    size: 14,
+    level: 'advanced',
+    coachId: 'co-03',
+    schedule: 'Mon - Thu • 5:00 - 7:00 PM',
+  },
+];
+
+export const attendanceRecords: AttendanceRecord[] = [
+  {
+    id: 'att-01',
+    sessionId: 'ses-01',
+    date: '2025-11-06',
+    totalAthletes: 22,
+    present: 21,
+    late: 1,
+    excused: 0,
+  },
+  {
+    id: 'att-02',
+    sessionId: 'ses-02',
+    date: '2025-11-06',
+    totalAthletes: 18,
+    present: 16,
+    late: 1,
+    excused: 1,
+  },
+  {
+    id: 'att-03',
+    sessionId: 'ses-03',
+    date: '2025-11-05',
+    totalAthletes: 15,
+    present: 14,
+    late: 0,
+    excused: 1,
+  },
+];
+
+export const performanceKPIs: KPI[] = [
+  { id: 'kpi-01', label: 'Active Athletes', value: 78, change: 8, changeDirection: 'up' },
+  { id: 'kpi-02', label: 'Coach Utilization', value: 86, change: 5, changeDirection: 'up', suffix: '%' },
+  { id: 'kpi-03', label: 'Attendance Rate', value: 91, change: -2, changeDirection: 'down', suffix: '%' },
+  { id: 'kpi-04', label: 'Avg Readiness', value: 88, change: 3, changeDirection: 'up', suffix: '%' },
+];
+
+export const performanceTrend: PerformanceTrendPoint[] = [
+  { month: 'Jun', attendance: 82, readiness: 76, sessions: 120 },
+  { month: 'Jul', attendance: 85, readiness: 78, sessions: 132 },
+  { month: 'Aug', attendance: 87, readiness: 80, sessions: 146 },
+  { month: 'Sep', attendance: 90, readiness: 83, sessions: 153 },
+  { month: 'Oct', attendance: 92, readiness: 86, sessions: 164 },
+  { month: 'Nov', attendance: 91, readiness: 88, sessions: 158 },
+];
+
